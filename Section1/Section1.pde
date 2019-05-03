@@ -32,19 +32,23 @@ class Visualizer {
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
     line(x, y+100, x+400, y+100);
-
+    
+    int boxWidth = 400 / values.length;
+    for (int i = 0; i < values.length; i++) {
+      if (values[i] < 0) {
+        fill (255, 0 , 0);
+      }
+      else {
+        fill (0, 255, 0);
+      }
+      rect (boxWidth * i + x, 100 + y, boxWidth, -values[i]); 
+    }
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
     //Negative values are red, and go below the line.
     //Positive values are green and go above the line.
 
-    //???WRITE THIS METHOD FIRST!!!
-    //THESE ARE WRONG: They just illustrate how they could look
-    fill(255, 0, 0);
-    rect(x+40, y+100, 60, 50);
-    fill(0, 255, 0);
-    rect(x+120, y+50, 60, 50);
-
+    
 
     //Width of the visualizer is 400!
 
